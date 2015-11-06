@@ -1,0 +1,24 @@
+.teaching-tab,.teaching-course-card {
+    box-shadow: inset -1px 0 rgba(0,0,0,.25);
+    border-top: 1px solid rgba(0,0,0,.25);
+    border-left: 1px solid rgba(0,0,0,.25);
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    background-color: #fff;
+    height: 120px;
+}
+
+
+.footer{
+    position: relative;
+    margin-top: 100px;
+    bottom:0;
+}
+
+#logo{
+    font-weight: 900;
+    color: #4aab4a;;
+}
+
+.content{
+    margin-top: 30px;
+}
