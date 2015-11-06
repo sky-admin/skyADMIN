@@ -67,39 +67,32 @@
 <div id="edit-template">
     <div id="main-section" class="fxdc-xs">
         <div class="side-nav m0-force-xs lined">
-            <ul>
-                <li class=" on ">
-                    <a>课程路线图</a>
-                </li>
-                <li class="">
-                    <a>
-                        课程反馈
-                    </a>
-                </li>
+            <ul class="nav nav-pills nav-stacked" role="tablist" style="padding: 15px">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">课程路线图</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">预习</a></li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">添加课程</a></li>
+
             </ul>
         </div>
-        <div class="form-wrapper">
-            <h2 class="tal-xs pl10-xs">
-                课程路线图
-            </h2>
-            <h3></h3>
-            <div class="bg-white-smoke-light bc-gray-lighter border-top-bottom pt10 pb10 mb20 oh">
-                <div class="fl pl10">
-                    <span class="bold">课程目标</span><br>
-                    <form>
-                        <textarea name="content" style="width:800px;height:400px;visibility:hidden;">KindEditor</textarea>
-                    </form>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="form-wrapper">
+                <h2 class="tal-xs pl10-xs">
+                    课程路线图
+                </h2>
+                <div class="bg-white-smoke-light bc-gray-lighter border-top-bottom pt10 pb10 mb20 oh">
+                    <div class="fl pl10">
+                        <span class="bold">课程目标</span><br>
+                        <form>
+                            <textarea name="content" style="width:800px;height:400px;visibility:hidden;">KindEditor</textarea>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-xs-10 " data-selector=".more-goals" data-initially-collapsed="">
-                    <ul class="regular-list">
-
-                        <div class="more-goals">
-
-                        </div>
-                    </ul>
-                </div>
-            </div>
+            </div></div>
+            <div role="tabpanel" class="tab-pane" id="profile">...</div>
+            <div role="tabpanel" class="tab-pane" id="messages">...</div>
         </div>
+
     </div>
 </div>
 
