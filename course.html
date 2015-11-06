@@ -8,108 +8,71 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <style>
+        form {
+            margin: 0;
+        }
+        textarea {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="css/default.css" />
+    <script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="js/zh_CN.js"></script>
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                allowFileManager : true
+            });
+            K('input[name=getHtml]').click(function(e) {
+                alert(editor.html());
+            });
+            K('input[name=isEmpty]').click(function(e) {
+                alert(editor.isEmpty());
+            });
+            K('input[name=getText]').click(function(e) {
+                alert(editor.text());
+            });
+            K('input[name=selectedHtml]').click(function(e) {
+                alert(editor.selectedHtml());
+            });
+            K('input[name=setHtml]').click(function(e) {
+                editor.html('<h3>Hello KindEditor</h3>');
+            });
+            K('input[name=setText]').click(function(e) {
+                editor.text('<h3>Hello KindEditor</h3>');
+            });
+            K('input[name=insertHtml]').click(function(e) {
+                editor.insertHtml('<strong>插入HTML</strong>');
+            });
+            K('input[name=appendHtml]').click(function(e) {
+                editor.appendHtml('<strong>添加HTML</strong>');
+            });
+            K('input[name=clear]').click(function(e) {
+                editor.html('');
+            });
+        });
+    </script>
+
 </head>
 <body id="udemy" class="my-courses">
 <div class="header-v4 js-hellobar  ">
     <div class="general-header-inner fxac">
         <div class="general-header-left fxac fx"></div>
         <a id="logo" href="#">UPCMOOC</a>
-
         <div class="general-header-right fx fxac fxje"></div>
     </div>
 </div>
 <div id="edit-template">
-    <div class="top fxw">
-        <div class="left-col fx fxw wa-force">
-            <div class="course-image-wrap fxw">
-                <div class="course-image"
-                     style="background-image: url(https://udemy-images.udemy.com/course/96x54/anonymous_v2.jpg)"></div>
-                <hgroup class="titles mt10-force-sm fx">
-                    <h1><a class="ellipsis" data-purpose="course-title" href="/draft/655558/learn/">ps</a></h1>
-
-                    <h2>
-                        <a href="/user/marshall-lee/">
-                            Marshall Lee
-                        </a>
-                    </h2>
-                </hgroup>
-            </div>
-            <div class="published-items mr30 fxwrap">
-                <span class="db fs13">已发布的课程项目</span>
-            <span class="big-count db pb10">
-                0/1
-            </span>
-            <span class="small-desc fs13">
-                (550 最大)
-            </span>
-            </div>
-        </div>
-        <div class="right-col fxdc wa-force w160-force-md w90-force-xs">
-
-            <a class="pb10 db fs13 m7" href="/course-manage/edit-status/?courseId=655558">
-                您的课程<span class="text-danger">尚未发布</span>。
-            </a>
-        <span class="publish-buttons fxdc-xs">
-                    <a id="publish-btn" href="/course-manage/publish-popup/?courseId=655558"
-                       class="ud-popupcoursesubmit btn btn-purple btn-sm mr10 right-btn mb10-md mb5-force-xs ellipsis-xs"
-                       data-enableloader="true" data-width="600" data-wrapcss="static-content-wrapper"
-                       data-courseid="655558">
-                        提交审查
-                    </a>
-            <div class="btn-group preview-course-btn-group">
-                <a class="btn btn-sm btn-gray right-btn dropdown-toggle" data-toggle="dropdown" href="#">
-                    <span class="preview-text">预览</span>
-                    <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
-                    <li>
-                        <a tabindex="-1" target="_blank" href="/draft/655558/learn/?instructorPreviewMode=instructor">
-                            作为讲师
-                        </a>
-                    </li>
-                    <li>
-                        <a tabindex="-1" target="_blank" href="/draft/655558/learn/?instructorPreviewMode=student">
-                            作为学生
-                        </a>
-                    </li>
-
-                    <li>
-                        <a tabindex="-1" target="_blank" href="/draft/655558/?instructorPreviewMode=guest">
-                            作为访问者
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </span>
-        </div>
-    </div>
-
-    <div id="instructors" class="users-popup-list static-content-wrapper" style="display:none;">
-        <h1>讲师</h1>
-
-        <div class="ud-userlist mask" data-page-size="12" data-source-url="/courses/655558/visible-instructors">
-            <table class="users-container table-striped table-hover" style="width: 100%;">
-                <tbody>
-                </tbody>
-            </table>
-            <div class="more">
-                <a class="btn none" href="javascript:void(0)">载入更多</a>
-                <span class="ajax-loader-tiny"></span>
-            </div>
-        </div>
-    </div>
-
     <div id="main-section" class="fxdc-xs">
-        <div class="side-nav m0-force-xs lined" data-purpose="side-menu">
+        <div class="side-nav m0-force-xs lined">
             <ul>
                 <li class=" on ">
-                    <a href="/course-manage/edit-getting-started/?courseId=655558">
-                        课程路线图
-                    </a>
+                    <a>课程路线图</a>
                 </li>
                 <li class="">
-                    <a href="/course-manage/edit-status/?courseId=655558">
+                    <a>
                         课程反馈
                     </a>
                 </li>
@@ -117,15 +80,15 @@
         </div>
         <div class="form-wrapper">
             <h2 class="tal-xs pl10-xs">
-                课程表
+                课程路线图
             </h2>
             <h3></h3>
             <div class="bg-white-smoke-light bc-gray-lighter border-top-bottom pt10 pb10 mb20 oh">
                 <div class="fl pl10">
                     <span class="bold">课程目标</span><br>
-                    <a href="/course-manage/edit-goals-and-audience/?courseId=655558">
-                        编辑
-                    </a>
+                    <form>
+                        <textarea name="content" style="width:800px;height:400px;visibility:hidden;">KindEditor</textarea>
+                    </form>
                 </div>
                 <div class="col-xs-10 " data-selector=".more-goals" data-initially-collapsed="">
                     <ul class="regular-list">
@@ -136,205 +99,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="curriculum-loader ajax-loader-stick none"></div>
-            <div class="ud-curriculumform" id="create-course-form-curriculum-list" data-courseid="655558"
-                 data-isiframeassetenabled="0" data-maxcurriculumobject="550" data-showv4previewlinks="0">
-                <ul>
-                    <li>
-                        <ul class="cfi-sortables-list ud-jq-sortable ui-sortable" data-placeholder="ui-state-highlight"
-                            data-handle=".cfi-content" data-tolerance="pointer"
-                            data-update="new Function('event','ui','return $.ud.ud_curriculumform.prototype.updateOrder();')"
-                            data-posturl="/courses/655558/instructor-curriculum-items/">
-
-                            <li class="cfi-chapter cfi-sortable " data-id="1011488" data-class="chapter"
-                                data-canaddcontent="0" id="item-chapter1011488">
-                                <div class="cfi-content opened">
-		<span class="content ui-state-default">
-				<span class="cfi-item-type">未发布的章:</span>
-			<span class="cfi-item-title fwb" data-purpose="chapter-title-shown">由此处开始</span>
-			<span class="edit-handle"></span>
-			<span class="sort-handle outer"></span><br>
-			<span class="cfi-item-description"></span>
-		</span>
-                                </div>
-                            </li>
-                            <li class="cfi-lecture cfi-sortable show-container" data-id="3940154" data-class="lecture"
-                                data-canaddcontent="1" id="item-lecture3940154">
-                                <div class="cfi-content opened">
-		<span class="content ui-state-default">
-				<span class="cfi-item-type">未发布的节：</span>
-			<span class="cfi-item-title" data-purpose="lecture-title-shown">介绍</span>
-			<span class="edit-handle"></span>
-			<a href="#" data-purpose="add-content"
-               class="add-content btn btn-primary btn-sm container-switch floating m0-10 m5-30-xs m5-30-md">
-                + 添加内容
-            </a>
-			<span class="collapse-btn container-switch"></span>
-			<span class="sort-handle outer mr5-md hidden-md hidden-xs"></span>
-		</span>
-                                </div>
-                                <div class="gray-container tablet-m0">
-                                    <ul class="more" style="border: 0px;">
-                                        <li class="desc">
-                                            <div class="lec-description none">
-
-                                            </div>
-                                            <div class="edit-container">
-                                            </div>
-                                        </li>
-                                        <li class="supplementary none">
-
-
-                                        </li>
-                                    </ul>
-                                    <p class="bottom-btns" style="border: 0px;">
-                                        <a class="btn btn-info desc-btn add mb10-xs" href="javascript:void(0)">
-                                            添加描述
-                                        </a>
-
-                                    </p>
-
-                                    <div style="display: none;" id="replace-with-video-confirm-3940154">
-                                        <h1>将本节讲授更新至视频吗?</h1>
-
-                                        <div class="mask">
-                                            <p>这节的内容将会被添加为可下载的资源，您可以选择移除。系统将提示您添加一个视频文件并重新发布为视频讲授。</p>
-                                            <a href="" class="btn btn-primary replace-with-video">转换为视频</a>
-                                            <a href="" class="btn btn-secondary cancel-replace-with-video">取消</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul class="cfi-forms-list">
-                            <div class="df fx add-forms-container">
-
-
-                                <li class="fx cfi-lecture cfi-add">
-                                    <a data-purpose="add-lecture-button"
-                                       class="content ui-state-default add-lecture-btn">
-                                        添加讲座
-                                    </a>
-                                </li>
-
-                                <li class="cfi-lecture cfi-add-form editing closed">
-            <span class="content ui-state-default">
-                <span class="cfi-item-type">新消息 讲座:</span>
-                <span class="cfi-item-title">
-
-
-<form method="post" lpformnum="1"><input type="hidden" name="csrfmiddlewaretoken"
-                                         value="Gs1FaDjlHtzzl7RJdjexrFeZP7egCzWS">
-
-    <div class="manage-fields-wrapper">
-        <div class="non-labeled " id="form-item-title">
-            <div id="tooltip-reference-title" class="tooltip-reference "><input
-                    class=" text-input ch-count-field ud-textinput textinput textInput form-control"
-                    data-max-length="80" data-purpose="lecture-title" data-show-counter="true" id="id_title"
-                    maxlength="80" name="title" placeholder="输入标题" type="text" value=""><span id="id_title-counter"
-                                                                                              class="ch-count">80</span>
-            </div>
-        </div>
-    </div>
-    <div class="form-actions">
-        <div class="submit-row"><input type="submit" name="submit" value="添加讲座" class="btn btn-primary btn btn-success"
-                                       id="submit-id-submit" data-purpose="submit-lecture"> <span>或 </span><a
-                href="javascript:void(0);" class="cancel-link">取消</a></div>
-    </div>
-</form>
-
-                </span>
-            </span>
-                                </li>
-
-
-                                <li class="fx cfi-quiz cfi-add">
-                                    <a data-purpose="add-quiz-button" class="content ui-state-default add-quiz-btn">
-                                        添加测验
-                                    </a>
-                                </li>
-
-                                <li class="cfi-quiz cfi-add-form editing closed">
-            <span class="content ui-state-default">
-                <span class="cfi-item-type">新消息 测验:</span>
-                <span class="cfi-item-title">
-                </span>
-            </span>
-                                </li>
-
-
-                                <li class="fx cfi-coding-exercise cfi-add">
-                                    <a data-purpose="add-coding-exercise-button"
-                                       class="content ui-state-default add-coding-exercise-btn"
-                                       href="/course-manage/edit-coding-exercise/?courseId=655558">
-                                        添加编码练习
-                                    </a>
-                                </li>
-
-
-                            </div>
-
-
-                            <li class="fx cfi-chapter cfi-add">
-                                <a data-purpose="add-chapter-button" class="content ui-state-default add-chapter-btn">
-                                    添加节段
-                                </a>
-                            </li>
-
-                            <li class="cfi-chapter cfi-add-form editing closed">
-            <span class="content ui-state-default">
-                <span class="cfi-item-type">新消息 节:</span>
-                <span class="cfi-item-title">
-
-
-<form method="post" lpformnum="3"><input type="hidden" name="csrfmiddlewaretoken"
-                                         value="Gs1FaDjlHtzzl7RJdjexrFeZP7egCzWS">
-
-    <div class="manage-fields-wrapper">
-        <div class="non-labeled " id="form-item-title">
-            <div id="tooltip-reference-title" class="tooltip-reference "><input
-                    class=" text-input ch-count-field ud-textinput textinput textInput form-control"
-                    data-max-length="80" data-purpose="chapter-title" data-show-counter="true" id="id_title"
-                    maxlength="80" name="title" placeholder="输入标题" type="text" value=""><span id="id_title-counter"
-                                                                                              class="ch-count">80</span>
-            </div>
-        </div>
-        <div class="labeled " id="form-item-description"><label>学生们在这门课程结束时能具备哪些能力？</label>
-
-            <div id="tooltip-reference-description" class="tooltip-reference "><input
-                    class=" text-input ch-count-field ud-textinput textinput textInput form-control"
-                    data-max-length="200" data-purpose="chapter-objective" data-show-counter="true" id="id_description"
-                    maxlength="200" name="description" placeholder="输入学习目标" type="text" value=""><span
-                    id="id_description-counter" class="ch-count">200</span></div>
-        </div>
-    </div>
-    <div class="form-actions">
-        <div class="submit-row"><input type="submit" name="submit" value="添加节段" class="btn btn-primary btn btn-success"
-                                       id="submit-id-submit" data-purpose="submit-chapter"> <span>或 </span><a
-                href="javascript:void(0);" class="cancel-link">取消</a></div>
-    </div>
-</form>
-
-                </span>
-            </span>
-                            </li>
-
-
-                            <li class="cfi-warning none">
-    <span class="content ui-state-default add-warning">
-        已达到最大课程项目数。
-        <a href="/support/1732310" target="_blank">
-            了解更多。
-        </a>
-    </span>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     </div>
 </div>
