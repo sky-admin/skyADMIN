@@ -22,3 +22,23 @@
 .content{
     margin-top: 30px;
 }
+
+.testname{
+    padding-bottom: 40px;
+}
+
+.upload{
+    padding-top: 40px;
+    text-align: center;
+}
+
+.queslist{
+    padding-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.quesandans{
+    margin-right: 10px;
+    
+}

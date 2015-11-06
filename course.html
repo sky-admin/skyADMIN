@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>添加课程</title>
@@ -8,10 +9,12 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
     <style>
         form {
             margin: 0;
         }
+        
         textarea {
             display: block;
         }
@@ -21,117 +24,195 @@
     <script charset="utf-8" src="js/zh_CN.js"></script>
     <script>
         var editor;
-        KindEditor.ready(function(K) {
+        KindEditor.ready(function (K) {
             editor = K.create('textarea[name="content"]', {
-                allowFileManager : true
+                allowFileManager: true
             });
-            K('input[name=getHtml]').click(function(e) {
+            K('input[name=getHtml]').click(function (e) {
                 alert(editor.html());
             });
-            K('input[name=isEmpty]').click(function(e) {
+            K('input[name=isEmpty]').click(function (e) {
                 alert(editor.isEmpty());
             });
-            K('input[name=getText]').click(function(e) {
+            K('input[name=getText]').click(function (e) {
                 alert(editor.text());
             });
-            K('input[name=selectedHtml]').click(function(e) {
+            K('input[name=selectedHtml]').click(function (e) {
                 alert(editor.selectedHtml());
             });
-            K('input[name=setHtml]').click(function(e) {
+            K('input[name=setHtml]').click(function (e) {
                 editor.html('<h3>Hello KindEditor</h3>');
             });
-            K('input[name=setText]').click(function(e) {
+            K('input[name=setText]').click(function (e) {
                 editor.text('<h3>Hello KindEditor</h3>');
             });
-            K('input[name=insertHtml]').click(function(e) {
+            K('input[name=insertHtml]').click(function (e) {
                 editor.insertHtml('<strong>插入HTML</strong>');
             });
-            K('input[name=appendHtml]').click(function(e) {
+            K('input[name=appendHtml]').click(function (e) {
                 editor.appendHtml('<strong>添加HTML</strong>');
             });
-            K('input[name=clear]').click(function(e) {
+            K('input[name=clear]').click(function (e) {
                 editor.html('');
             });
         });
     </script>
 
 </head>
+
 <body id="udemy" class="my-courses">
-<div class="header-v4 js-hellobar  ">
-    <div class="general-header-inner fxac">
-        <div class="general-header-left fxac fx"></div>
-        <a id="logo" href="#">UPCMOOC</a>
-        <div class="general-header-right fx fxac fxje"></div>
-    </div>
-</div>
-<div id="edit-template">
-    <div id="main-section" class="fxdc-xs">
-        <div class="side-nav m0-force-xs lined">
-            <ul class="nav nav-pills nav-stacked" role="tablist" style="padding: 15px">
-                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">课程路线图</a></li>
-                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">预习</a></li>
-                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">添加课程</a></li>
-            </ul>
+    <div class="header-v4 js-hellobar  ">
+        <div class="general-header-inner fxac">
+            <div class="general-header-left fxac fx"></div>
+            <a id="logo" href="#">UPCMOOC</a>
+            <div class="general-header-right fx fxac fxje"></div>
         </div>
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">
-                <div class="form-wrapper">
-                <h2 class="tal-xs pl10-xs">
+    </div>
+    <div id="edit-template">
+        <div id="main-section" class="fxdc-xs">
+            <div class="side-nav m0-force-xs lined">
+                <ul class="nav nav-pills nav-stacked" role="tablist" style="padding: 15px">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">课程路线图</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">预习内容</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">添加课程</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <!--            课程路线图部分-->
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="form-wrapper">
+                        <h2 class="tal-xs pl10-xs">
                     课程路线图
                 </h2>
-                <div class="bg-white-smoke-light bc-gray-lighter border-top-bottom pt10 pb10 mb20 oh">
-                    <div class="fl pl10">
-                        <span class="bold">实验名称</span><br>
-                        <input type="text" style="width: 400px">
-                    </div>
-                    <br>
-                    <div class="fl pl10">
-                        <span class="bold">课程目标</span><br>
-                        <form>
-                            <textarea name="content" style="width:800px;height:400px;visibility:hidden;">KindEditor</textarea>
-                        </form>
-                    </div>
-                    <div class="fl pl10">
-                        <span class="bold">课程目标</span><br>
-                        <form>
-                            <textarea name="content" style="width:800px;height:400px;visibility:hidden;">KindEditor</textarea>
-                        </form>
+                        <div class="bg-white-smoke-light bc-gray-lighter border-top-bottom pt10 pb10 mb20 oh">
+                            <div class="fl pl10 testname">
+                                <span class="bold">实验名称</span>
+                                <br>
+                                <input type="text" style="width: 400px"> 选择所属课程：
+                                <select>
+                                    <option>通信原理</option>
+                                    <option>微机原理</option>
+                                </select>
+                            </div>
+                            <div class="fl pl10 testname">
+                                <span class="bold">课程原理</span>
+                                <br>
+                                <form>
+                                    <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入课程原理</textarea>
+                                </form>
+                            </div>
+                            <div class="fl pl10 testname">
+                                <span class="bold">课程目标</span>
+                                <br>
+                                <form>
+                                    <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入课程目标</textarea>
+                                </form>
+                            </div>
+                            <div class="fl pl10">
+                                <span class="bold">课程内容</span>
+                                <br>
+                                <form>
+                                    <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入课程内容</textarea>
+                                </form>
+                            </div>
+                        </div>
+                        <div style="text-align:center;padding:10px">
+                            <button class="btn btn-primary">保存</button>
+                        </div>
                     </div>
                 </div>
-            </div></div>
-            <div role="tabpanel" class="tab-pane" id="profile">...</div>
-            <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                <!--            预习内容部分-->
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="form-wrapper">
+                        <h2 class="tal-xs pl10-xs">预习内容</h2>
+                        <div class="bg-white-smoke-light bc-gray-lighter border-top-bottom pt10 pb10 mb20 oh">
+                            <div class="pl10 testname">
+                                实验描述
+                                <form>
+                                    <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入实验描述</textarea>
+                                </form>
+                                <div class="upload">
+                                    <form id="upload">
+                                        <input type="file">
+                                    </form>
+                                    <button class="btn btn-primary btn-lg" id="clikToUpload">上传视频</button>
+                                </div>
+                                <div class="queslist">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <th>序号</th>
+                                            <th>题目</th>
+                                            <th>详情</th>
+                                        </thead>
+                                        <tbody>
+                                            <td>1</td>
+                                            <td>请选择XXXX的原因并分析其asgajsugwishiagsiuds</td>
+                                            <td><a href="#">详情页</a></td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="quesandans">
+                                    在视频中插入问题：
+                                    <form class="">
+                                        <div class="form-grounp">
+                                            <label for="ques">问题</label>
+                                            <input type="text" class="form-control" id="ques">
+                                        </div>
+                                        <div class="form-grounp">
+                                            <label for="time">插入时间点</label>
+                                            <input type="text" class="form-control" id="time" placeholder="请输入时间节点如：1'12">
+                                        </div>
+                                        <div class="form-grounp">
+                                            <label for="answer">正确答案</label>
+                                            <input type="text" class="form-control" id="answer">
+                                        </div>
+                                        <div class="form-grounp">
+                                            <label for="wanswer">错误答案</label>
+                                            <input type="text" class="form-control" id="wanswer" placeholder="最多3个，用英文的分号分隔">
+                                        </div>
+                                        <br>
+                                        <div class="form-grounp">
+                                            <input type="submit" class="form-control">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">...</div>
+            </div>
+
         </div>
-
     </div>
-</div>
 
-<!--footer部分-->
-<div class="stickyfooter">
-    <div class="footer-v42 p15-0 fs13">
-        <div class="container">
-            <ul class="fxw mt10 hidden-xs">
-                <li>
-                    <a href="#" class="white-text">关于我们</a>
-                </li>
-                <li>
-                    <span class="gray-text copyright">
+    <!--footer部分-->
+    <div class="stickyfooter">
+        <div class="footer-v42 p15-0 fs13">
+            <div class="container">
+                <ul class="fxw mt10 hidden-xs">
+                    <li>
+                        <a href="#" class="white-text">关于我们</a>
+                    </li>
+                    <li>
+                        <span class="gray-text copyright">
                         版权 &copy; 2015 upc.edu.cn
                     </span>
-                </li>
-                <li>
-                    <a href="/terms/" class="gray-text">
+                    </li>
+                    <li>
+                        <a href="/terms/" class="gray-text">
                         使用条款
                     </a>
-                </li>
-                <li>
-                    <a href="/terms/privacy/" class="gray-text">
+                    </li>
+                    <li>
+                        <a href="/terms/privacy/" class="gray-text">
                         隐私政策
                     </a>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
