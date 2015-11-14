@@ -72,14 +72,30 @@
         <div id="main-section" class="fxdc-xs">
             <div class="side-nav m0-force-xs lined">
                 <ul class="nav nav-pills nav-stacked" role="tablist" style="padding: 15px">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">课程路线图</a></li>
+                    <li role="presentation" class="active"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">添加课程</a></li>
+                    <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">课程路线图</a></li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">预习内容</a></li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">添加课程</a></li>
                 </ul>
             </div>
             <div class="tab-content">
+                <!--                添加课程-->
+                <div role="tabpanel" class="tab-pane  active" id="messages">
+                    <div class="form-wrapper">
+                        <h2 class="tal-xs pl10-xs">添加课程</h2>
+                        <div class="createclass">
+                            <p>如果该实验属于的课程还未创建，请在此创建课程！</p>
+                            <form class="form-inline">
+                                <div class="form-grounp">
+                                    <label for="classname">课程名称：</label>
+                                    <input id="classname" style="width:400px" class="form-control" type="text">
+                                    <input class="form-control btn-primary" type="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <!--            课程路线图部分-->
-                <div role="tabpanel" class="tab-pane active" id="home">
+                <div role="tabpanel" class="tab-pane" id="home">
                     <div class="form-wrapper">
                         <h2 class="tal-xs pl10-xs">
                     课程路线图
@@ -108,11 +124,18 @@
                                     <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入课程目标</textarea>
                                 </form>
                             </div>
-                            <div class="fl pl10">
+                            <div class="fl pl10 testname">
                                 <span class="bold">课程内容</span>
                                 <br>
                                 <form>
                                     <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入课程内容</textarea>
+                                </form>
+                            </div>
+                            <div class="fl pl10">
+                                <span class="bold">实验描述</span>
+                                <br>
+                                <form>
+                                    <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入实验描述</textarea>
                                 </form>
                             </div>
                         </div>
@@ -127,10 +150,6 @@
                         <h2 class="tal-xs pl10-xs">预习内容</h2>
                         <div class="bg-white-smoke-light bc-gray-lighter border-top-bottom pt10 pb10 mb20 oh">
                             <div class="pl10 testname">
-                                实验描述
-                                <form>
-                                    <textarea name="content" style="width:99%;height:200px;visibility:hidden;">输入实验描述</textarea>
-                                </form>
                                 <div class="upload">
                                     <form id="upload">
                                         <input type="file">
@@ -164,7 +183,7 @@
                                         </div>
                                         <div class="form-grounp">
                                             <label for="answer">选项</label>
-                                            <input type="text" class="form-control" id="answer" placeholder="选项A"> 
+                                            <input type="text" class="form-control" id="answer" placeholder="选项A">
                                             <br>
                                             <input type="text" class="form-control" id="answer" placeholder="选项B">
                                             <br>
@@ -184,14 +203,13 @@
                                                 <option value="D">D</option>
                                                 <option value="E">E</option>
                                             </select>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            问题类型：
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 问题类型：
                                             <select>
                                                 <option>选择题</option>
                                                 <option>简答题</option>
                                             </select>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            分值：<input type="text" style="width:60px">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 分值：
+                                            <input type="text" style="width:60px">
                                         </div>
                                         <br>
                                         <div class="form-grounp">
@@ -200,22 +218,6 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!--                添加课程-->
-                <div role="tabpanel" class="tab-pane" id="messages">
-                    <div class="form-wrapper">
-                        <h2 class="tal-xs pl10-xs">添加课程</h2>
-                        <div class="createclass">
-                            <p>如果该实验属于的课程还未创建，请在此创建课程！</p>
-                            <form class="form-inline">
-                                <div class="form-grounp">
-                                    <label for="classname">课程名称：</label>
-                                    <input id="classname" style="width:400px" class="form-control" type="text">
-                                    <input class="form-control btn-primary" type="submit">
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
