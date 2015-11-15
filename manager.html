@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理员界面</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/udemy.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body id="udemy" class="my-courses">
+    <div class="header-v4 js-hellobar  ">
+        <div class="general-header-inner fxac">
+            <div class="general-header-left fxac fx"></div>
+            <a id="logo" href="#">UPCMOOC</a>
+
+            <div class="general-header-right fx fxac fxje"></div>
+        </div>
+    </div>
+    <div class="ud-angular-loader">
+        <div class="my-courses-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 hidden-xs hidden-sm">
+                        <span class="a1 pos-r my-courses-heading">管理界面</span>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 p0 tar tac-force-md">
+                        <ul class="nav nav-tabs pos-r">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">添加老师</a>
+                            </li>
+                            <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">账号列表</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--页面主体-->
+            <div class="tab-content">
+                <!--添加教师标签页-->
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="container">
+                        <div class="addteacher center-block">
+                            <h1 class="">添加老师</h1>
+                            <br>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">工号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="工号是初始密码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">姓名</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" placeholder="请填写老师姓名">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="center-block">
+                                        <button type="submit" class="btn btn-default">确认添加</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--footer部分-->
+                    <footer class="footer">
+                        <div class="footer-v42 p15-0 fs13">
+                            <div class="container">
+                                <ul class="fxw mt10 hidden-xs">
+                                    <li><a href="#" class="white-text">关于我们</a></li>
+                                    <li><span class="gray-text copyright">版权 &copy; 2015 upc.edu.cn</span></li>
+                                    <li><a href="/terms/" class="gray-text">使用条款</a></li>
+                                    <li><a href="/terms/privacy/" class="gray-text">隐私政策</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <!--教学标签页-->
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="container">
+                        <div class="content">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>账号</th>
+                                        <th>姓名</th>
+                                        <th>属性</th>
+                                        <th>状态</th>
+                                        <th>更改状态</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-striped">
+                                    <tr>
+                                        <td>20020023</td>
+                                        <td>李世宝</td>
+                                        <td>教师</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>20060133</td>
+                                        <td>顾朝志</td>
+                                        <td>教师</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1307030201</td>
+                                        <td>周瑶</td>
+                                        <td>学生</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1307030202</td>
+                                        <td>孙琳</td>
+                                        <td>学生</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>20060076</td>
+                                        <td>章扬</td>
+                                        <td>教师</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1307030101</td>
+                                        <td>苑怡璇</td>
+                                        <td>学生</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1307030219</td>
+                                        <td>范光勇</td>
+                                        <td>学生</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1307030220</td>
+                                        <td>刘太柱</td>
+                                        <td>学生</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1307030104</td>
+                                        <td>叶丽雯</td>
+                                        <td>学生</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1307030116</td>
+                                        <td>李敬之</td>
+                                        <td>学生</td>
+                                        <td>已激活</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    操作 <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">激活</a></li>
+                                                    <li><a href="#">停用</a></li>
+                                                    <li><a href="#">删除</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--footer部分-->
+                    <footer class="footer">
+                        <div class="footer-v42 p15-0 fs13">
+                            <div class="container">
+                                <ul class="fxw mt10 hidden-xs">
+                                    <li>
+                                        <a href="#" class="white-text">关于我们</a>
+                                    </li>
+                                    <li>
+                                        <span class="gray-text copyright">
+                        版权 &copy; 2015 upc.edu.cn
+                    </span>
+                                    </li>
+                                    <li>
+                                        <a href="/terms/" class="gray-text">
+                                        使用条款
+                                    </a>
+                                    </li>
+                                    <li>
+                                        <a href="/terms/privacy/" class="gray-text">
+                                        隐私政策
+                                    </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
