@@ -3,6 +3,8 @@
  */
 
 require("http").createServer(function (req, res) {
-    console.log(req.url);
+    console.log(req);
     res.end("hello world");
 }).listen(8000);
+
+console.log("server is running on 8000");
