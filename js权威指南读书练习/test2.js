@@ -30,4 +30,18 @@ with (obj) {
     console.log(a);
 }//严格模式中禁止使用
 
-//严格模式和非严格模式的区别: 1、禁止使用with语句。2、所有变量要先声明。3、
+//严格模式和非严格模式的区别: 1、禁止使用with语句。2、所有变量要先声明。3、严格模式中调用的函数(不是方法)中的一个this值是undefined,非严格模式中则总是全局对象。
+
+//forEach()方法
+var data = [1, 2, 3, 4, 5];
+var sumOfSquares = 0;
+data.forEach(function (x) {
+    sumOfSquares += x*x;
+});
+console.log(sumOfSquares);
+
+//Array的函数:join,reverse,sort
+var arr1 = [1, 2, 3];
+console.log(arr1.join());      //默认使用逗号分隔
+console.log(arr1.join(""));
+console.log(arr1.reverse().join());
