@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+<button id="btn1">请求1，获取cookie</button>
+<button id="btn2">请求2，验证cookie</button>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+    $(function () {
+
+        function sendRequest(action) {
+            $.get({
+                url: 'http://www.test1.com:3000/' + action,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success(res) {
+                    console.log(res);
+                }
+            })
+        }
+
+        document.querySelector('#btn1').addEventListener('click', function () {
+            sendRequest('setcookie');
+        });
+
+        document.querySelector('#btn2').addEventListener('click', function () {
+            sendRequest('getcookie');
+        });
+
+    })
+</script>
+</body>
+</html>
